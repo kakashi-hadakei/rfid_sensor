@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="fill"
+	android:weightSum="1"
+	android:orientation="vertical">
+
+	<com.androidplot.xy.XYPlot
+		android:id="@+id/aprHistoryPlot"
+		androidPlot.domainLabel="Sample"
+		androidPlot.domainLabelWidget.labelPaint.textSize="@dimen/domain_label_font_size"
+		androidPlot.graphWidget.domainLabelPaint.textSize="@dimen/domain_tick_label_font_size"
+		androidPlot.graphWidget.domainOriginLabelPaint.textSize="@dimen/domain_tick_label_font_size"
+
+		androidPlot.graphWidget.marginBottom="25dp"
+		androidPlot.graphWidget.marginLeft="22dp"
+		androidPlot.graphWidget.marginRight="20dp"
+		androidPlot.graphWidget.marginTop="20dp"
+		androidPlot.graphWidget.rangeLabelPaint.textSize="@dimen/range_tick_label_font_size"
+		androidPlot.graphWidget.rangeOriginLabelPaint.textSize="@dimen/range_tick_label_font_size"
+		androidPlot.rangeLabel="Temperature [f]"
+		androidPlot.rangeLabelWidget.labelPaint.textSize="@dimen/domain_label_font_size"
+		androidPlot.title="Received Data"
+		androidPlot.titleWidget.labelPaint.textSize="@dimen/title_font_size"
+		androidplot.renderMode="use_background_thread"
+		title="A/P/R History"
+		android:layout_width="match_parent"
+
+		android:layout_height="256dp"
+		android:layout_weight="8.50" />
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="257dp">
+
+		<TextView
+			android:id="@+id/debug_name_field_1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_above="@+id/debug_name_field_2"
+			android:layout_alignParentStart="true"
+			android:layout_marginBottom="20dp"
+			android:text="Ref Orig"
+			android:textSize="20dp" />
+
+		<TextView
+			android:id="@+id/debug_val_1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignBaseline="@+id/debug_name_field_1"
+			android:layout_alignBottom="@+id/debug_name_field_1"
+			android:layout_centerHorizontal="true"
+			android:text="------"
+			android:textSize="20dp" />
+
+		<TextView
+			android:id="@+id/debug_name_field_2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_above="@+id/debug_name_field_3"
+			android:layout_alignParentStart="true"
+			android:layout_marginBottom="22dp"
+			android:text="Therm Orig"
+			android:textSize="20dp" />
+
+		<CheckBox
+			android:id="@+id/hwAccelerationCb"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentEnd="true"
+			android:text="HW Acceleration"
+			android:visibility="invisible" />
+
+		<TextView
+			android:id="@+id/debug_val_2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="------"
+			android:textSize="20dp"
+			android:layout_alignBaseline="@+id/debug_name_field_2"
+			android:layout_alignBottom="@+id/debug_name_field_2"
+			android:layout_alignStart="@+id/debug_val_1" />
+
+		<TextView
+			android:id="@+id/debug_name_field_3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentStart="true"
+			android:layout_centerVertical="true"
+			android:text="ADC Convert"
+			android:textSize="20dp" />
+
+		<TextView
+			android:id="@+id/debug_val_3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignBaseline="@+id/debug_name_field_3"
+			android:layout_alignBottom="@+id/debug_name_field_3"
+			android:text="------"
+			android:textSize="20dp"
+			android:layout_toStartOf="@+id/hwAccelerationCb"
+			android:layout_alignEnd="@+id/debug_val_4" />
+
+		<Button
+			android:id="@+id/button2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:layout_marginBottom="8dp"
+			android:layout_toEndOf="@+id/textView"
+			android:text="disconnected"
+			android:visibility="invisible" />
+
+		<TextView
+			android:id="@+id/textView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="   ADCOrig:  "
+			android:textSize="20dp"
+			android:layout_above="@+id/button2"
+			android:layout_alignParentStart="true"
+			android:layout_marginBottom="14dp" />
+
+		<TextView
+			android:id="@+id/debug_val_4"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignStart="@+id/debug_val_1"
+			android:layout_alignTop="@+id/textView"
+			android:text="------"
+			android:textSize="20dp" />
+
+		<Button
+			android:id="@+id/save"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentEnd="true"
+			android:layout_alignTop="@+id/debug_val_1"
+			android:layout_marginEnd="30dp"
+			android:text="Save" />
+
+
+	</RelativeLayout>
+
+</LinearLayout>
